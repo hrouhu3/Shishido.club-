@@ -32,15 +32,15 @@ body:not(.home) {
 }
 
 /* ============================
-   Top Title
+   Top Title – consistent across pages
 ============================ */
 .top-title {
-  font-size: 2.25rem; /* 36px */
-  margin-bottom: 1.25rem; /* 20px */
+  font-size: 2.25rem; /* same size for all pages (desktop) */
+  margin-bottom: 1.25rem; 
   font-weight: bold;
   position: fixed;
-  top: 1.25rem; /* 20px */
-  left: 1.25rem; /* 20px */
+  top: 1.25rem; /* same top offset on all pages */
+  left: 1.25rem; /* same left offset on all pages */
   z-index: 1000;
 }
 
@@ -80,7 +80,7 @@ body:not(.home) {
 }
 
 .sidebar a:active {
-  font-weight: bold; /* fixed invalid text-decoration */
+  font-weight: bold;
 }
 
 /* Content */
@@ -131,7 +131,7 @@ body:not(.home) {
   display: block;
 }
 
-/* Individual work images (if needed separately) */
+/* Individual work images (Work1.html etc.) */
 .work-image {
   max-height: 500px;
   width: auto;
@@ -142,20 +142,34 @@ body:not(.home) {
    Mobile adjustments (smartphones)
 ============================ */
 @media (max-width: 600px) {
+
+  /* Base font-size smaller */
   html {
-    font-size: 14px; /* slightly smaller base size on mobile */
+    font-size: 14px; /* slightly smaller base size */
+  }
+
+  /* Body padding for mobile */
+  body {
+    padding: 6rem 1rem 1rem 1rem; /* reduce left padding for mobile */
+  }
+
+  /* Top title */
+  .top-title {
+    font-size: 2rem; /* slightly smaller on mobile */
   }
 
   /* Headings */
-  .top-title {
-    font-size: 2rem; /* scale down from 2.25rem */
-  }
-
   h1, h2, h3, h4, h5, h6 {
-    font-size: 1.2rem; /* example, adjust as needed */
+    font-size: 1.2rem; 
   }
 
   /* Sidebar links */
+  .sidebar {
+    top: 5.5rem; /* slightly smaller top offset */
+    width: 10rem; /* narrower sidebar */
+    gap: 0.5rem;  /* smaller link spacing */
+  }
+
   .sidebar a {
     font-size: 0.9rem; 
   }
@@ -164,5 +178,55 @@ body:not(.home) {
   p {
     font-size: 0.95rem;
     line-height: 1.5;
+  }
+
+  /* Profile page adjustments */
+  body.profile .content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    padding-right: 1rem; /* right space */
+    margin-bottom: 0.75rem;
+  }
+
+  .profile-photo {
+    max-width: 80%;
+    display: block;
+    margin: 0 auto 0.75rem auto; /* center and reduce bottom margin */
+  }
+
+  /* Email on single line */
+  .content p span.email {
+    white-space: nowrap;
+  }
+
+  /* Work gallery adjustments */
+  .work-gallery {
+    display: flex;
+    flex-direction: column; /* stack images vertically */
+    gap: 0.5rem;            /* smaller gap */
+    margin: 0 auto;          /* center gallery */
+    padding: 0 0.5rem;       /* optional horizontal padding */
+  }
+
+  .work-gallery a {
+    width: 100%;
+    height: auto;
+    margin-right: 0; /* remove extra right-space */
+  }
+
+  .work-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Individual work images (Work1.html etc.) */
+  .work-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 0.75rem;
+    display: block;
   }
 }
