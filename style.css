@@ -1,0 +1,168 @@
+/* ============================
+   Reset & Base Setup
+============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* 1rem = 16px */
+}
+
+body {
+  font-family: 'Lucida Console', Monaco, monospace;
+  min-height: 100vh;
+  padding: 6.25rem 1.25rem 1.25rem 15rem; /* top right bottom left */
+}
+
+/* ============================
+   Page Backgrounds
+============================ */
+body.home {
+  background: url('images/bird.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+body:not(.home) {
+  background-color: #058e49;
+  color: white;
+}
+
+/* ============================
+   Top Title
+============================ */
+.top-title {
+  font-size: 2.25rem; /* 36px */
+  margin-bottom: 1.25rem; /* 20px */
+  font-weight: bold;
+  position: fixed;
+  top: 1.25rem; /* 20px */
+  left: 1.25rem; /* 20px */
+  z-index: 1000;
+}
+
+.top-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================
+   Layout
+============================ */
+.main-container {
+  display: flex;
+  gap: 1.25rem; /* 20px */
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 6.25rem; /* 100px */
+  left: 1.25rem; /* 20px */
+  width: 12.5rem; /* 200px */
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem; /* 15px */
+}
+
+.sidebar a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1rem; /* 16px */
+  transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.sidebar a:active {
+  font-weight: bold; /* fixed invalid text-decoration */
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding-top: 1.25rem; /* 20px */
+}
+
+.content p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ============================
+   Images
+============================ */
+.profile-photo {
+  max-width: 18.75rem; /* 300px */
+  width: 100%;
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+.main-photo {
+  max-width: 62.5rem; /* 1000px */
+  width: 100%;
+  margin-top: -4.6875rem; /* -75px */
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+/* Work Gallery */
+.work-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem; /* 20px */
+  margin-top: 1.25rem;
+}
+
+.work-gallery a {
+  display: block;
+  width: 31.25rem;  /* 500px */
+  height: 31.25rem; /* 500px */
+}
+
+.work-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Individual work images (if needed separately) */
+.work-image {
+  max-height: 500px;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+/* ============================
+   Mobile adjustments (smartphones)
+============================ */
+@media (max-width: 600px) {
+  html {
+    font-size: 14px; /* slightly smaller base size on mobile */
+  }
+
+  /* Headings */
+  .top-title {
+    font-size: 2rem; /* scale down from 2.25rem */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1.2rem; /* example, adjust as needed */
+  }
+
+  /* Sidebar links */
+  .sidebar a {
+    font-size: 0.9rem; 
+  }
+
+  /* Body text */
+  p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
