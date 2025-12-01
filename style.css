@@ -157,7 +157,7 @@ body:not(.home) {
 
   /* Body padding for mobile */
   body {
-    padding: 6rem 1rem 1rem 1rem; /* reduce left padding for mobile */
+    padding: 6rem 1rem 1rem 0; /* reduce left padding for mobile */
   }
 
   /* Top title */
