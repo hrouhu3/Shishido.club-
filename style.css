@@ -21,8 +21,10 @@ body {
    Page Backgrounds
 ============================ */
 body.home {
-  background: url('images/bird.jpeg') no-repeat center center fixed;
+  /*background: url('images/bird.jpeg') no-repeat center center fixed;
   background-size: cover;
+  color: white; */
+  background-color: #370808; /* same as other pages, or pick your color */
   color: white;
 }
 
