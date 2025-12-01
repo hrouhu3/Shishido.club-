@@ -187,69 +187,40 @@ body:not(.home) {
     line-height: 1.5;
   }
 
-  /* ============================
-     Profile page adjustments
-  ============================ */
-  body.profile .content {
-    display: flex;
-    justify-content: flex-end; /* push the column to the right */
-  }
-  
-  .profile-right-column {
-    display: flex;
-    flex-direction: column; /* stack images and text vertically */
-    justify-content: flex-end; /* text at the bottom */
-    align-items: flex-end; /* right-align everything */
-    gap: 0.5rem; /* spacing between images and text */
-  }
-  
-  
-  .profile-photo-container {
-    display: flex;
-    flex-direction: column; /* stack images vertically */
-    gap: 0.5rem; /* space between test images */
-  }
+/* ============================
+   Profile page adjustments
+============================ */
+body.profile .content {
+  display: flex;
+  justify-content: flex-end; /* push the column to the right */
+}
 
-  body.profile .content p {
-    text-align: right;           /* right-align text */
-    font-size: 0.9rem;
-    line-height: 1.4;
-    margin-bottom: 0.75rem;
-    flex: 1;                     /* text takes remaining space */
-  }
+.profile-right-column {
+  display: flex;
+  flex-direction: column; /* stack image + text vertically */
+  align-items: flex-end;   /* right-align everything */
+  gap: 0.75rem;            /* spacing between image and text */
+}
 
-  /* Profile photo size options */
-  .profile-photo-small,
-  .profile-photo-medium,
-  .profile-photo-large {
-    display: block; /* show on mobile */
-  }
+.profile-right-column .profile-photo {
+  max-width: 70%;  /* image takes 70% of container width */
+  height: auto;
+  display: block;
+  margin: 0;
+}
 
-  .profile-photo-small {
-    max-width: 50%;
-    height: auto;
-    display: block;
-    margin: 0;
-  }
+body.profile .content p {
+  text-align: right;      /* right-align text */
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+}
 
-  .profile-photo-medium {
-    max-width: 60%;
-    height: auto;
-    display: block;
-    margin: 0;
-  }
+/* Email on single line */
+.content p span.email {
+  white-space: nowrap;
+}
 
-  .profile-photo-large {
-    max-width: 70%;
-    height: auto;
-    display: block;
-    margin: 0;
-  }
-
-  /* Email on single line */
-  .content p span.email {
-    white-space: nowrap;
-  }
 
   /* ============================
      Work gallery adjustments
