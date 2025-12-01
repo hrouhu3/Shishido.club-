@@ -180,18 +180,44 @@ body:not(.home) {
     line-height: 1.5;
   }
 
-  /* Profile page adjustments */
-  body.profile .content p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    padding-right: 1rem; /* right space */
-    margin-bottom: 0.75rem;
+  /* ============================
+     Profile page adjustments
+  ============================ */
+  body.profile .content {
+    display: flex;
+    flex-direction: row-reverse; /* picture on the right */
+    align-items: flex-start;     /* align top */
+    gap: 1rem;                   /* space between text and image */
   }
 
-  .profile-photo {
-    max-width: 80%;
+  body.profile .content p {
+    text-align: right;           /* right-align text */
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+    flex: 1;                     /* text takes remaining space */
+  }
+
+  /* Profile photo size options */
+  .profile-photo-small {
+    max-width: 30%;
+    height: auto;
     display: block;
-    margin: 0 auto 0.75rem auto; /* center and reduce bottom margin */
+    margin: 0;
+  }
+
+  .profile-photo-medium {
+    max-width: 40%;
+    height: auto;
+    display: block;
+    margin: 0;
+  }
+
+  .profile-photo-large {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0;
   }
 
   /* Email on single line */
@@ -199,7 +225,9 @@ body:not(.home) {
     white-space: nowrap;
   }
 
-  /* Work gallery adjustments */
+  /* ============================
+     Work gallery adjustments
+  ============================ */
   .work-gallery {
     display: flex;
     flex-direction: column; /* stack images vertically */
@@ -210,7 +238,7 @@ body:not(.home) {
 
   .work-gallery a {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: auto;
     margin-right: 0; /* remove extra right-space */
   }
 
@@ -230,3 +258,4 @@ body:not(.home) {
     display: block;
   }
 }
+
