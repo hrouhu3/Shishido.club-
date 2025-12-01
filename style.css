@@ -210,7 +210,7 @@ body:not(.home) {
 
   .work-gallery a {
     width: 100%;
-    height: auto;
+    aspect-ratio: 1 / 1;
     margin-right: 0; /* remove extra right-space */
   }
 
