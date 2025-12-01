@@ -155,9 +155,9 @@ body:not(.home) {
     font-size: 14px; /* slightly smaller base size */
   }
 
-  /* Body padding for mobile */
+  /* Remove default body padding on mobile */
   body {
-    padding: 6rem 1rem 1rem 0; /* reduce left padding for mobile */
+    padding: 0; /* now you control spacing per container */
   }
 
   /* Top title */
@@ -181,44 +181,44 @@ body:not(.home) {
     font-size: 0.9rem; 
   }
 
-  /* Body text */
+  /* Body text default */
   p {
     font-size: 0.95rem;
     line-height: 1.5;
   }
 
-/* ============================
-   Profile page adjustments
-============================ */
-body.profile .content {
-  display: flex;
-  justify-content: flex-end; /* push column to right */
-  width: 100%;
-}
+  /* ============================
+     Profile page adjustments
+  ============================ */
+  body.profile .content {
+    display: flex;
+    justify-content: flex-end; /* push column to right */
+    width: 100%;
+    padding: 1rem; /* optional padding inside content */
+  }
 
-.profile-right-column {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;   /* image touches right */
-  gap: 0.75rem;
-  width: max-content;      /* shrink to content width */
-}
+  .profile-right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;   /* image touches right */
+    gap: 0.75rem;
+    width: max-content;      /* shrink to content width */
+  }
 
-.profile-right-column .profile-photo {
-  max-width: 70%;
-  height: auto;
-  display: block;
-  margin: 0; /* no extra space */
-}
+  .profile-right-column .profile-photo {
+    max-width: 70%;          /* image size */
+    height: auto;
+    display: block;
+    margin: 0;               /* no extra space */
+  }
 
-body.profile .content p {
-  text-align: right;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin: 0;
-  padding-right: 1rem; /* keep space from screen edge for text only */
-}
-
+  body.profile .content p {
+    text-align: right;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+    padding-right: 1rem;     /* text padding from right edge */
+  }
 
   /* ============================
      Work gallery adjustments
@@ -228,7 +228,7 @@ body.profile .content p {
     flex-direction: column; /* stack images vertically */
     gap: 0.5rem;            /* smaller gap */
     margin: 0 auto;          /* center gallery */
-    padding: 0 0.5rem;       /* optional horizontal padding */
+    padding: 0 0.5rem;       /* horizontal padding */
   }
 
   .work-gallery a {
@@ -252,4 +252,5 @@ body.profile .content p {
     margin-bottom: 0.75rem;
     display: block;
   }
+
 }
