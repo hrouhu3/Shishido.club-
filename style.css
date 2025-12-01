@@ -310,23 +310,27 @@ body:not(.home) {
     width: 100%;
   }
   
+  /* Image stays flush right, no extra space */
   body .work-right-column .work-image {
-    max-width: 70%; /* image width, flush right */
+    max-width: 70%; 
     height: auto;
     display: block;
     margin: 0;        /* no extra space */
   }
   
+  /* Title aligned right, with padding on right */
   body .work-right-column h2 {
-    text-align: right;  /* title aligned right with container */
+    text-align: right;
     margin: 0;
-    padding-right: 0;   /* flush with right edge */
+    padding-right: 1rem; /* space from right edge */
   }
   
+  /* Paragraph text left-aligned, same width as image, with right padding */
   body .work-right-column p {
-    text-align: left;   /* text aligned left */
-    max-width: 70%;     /* keep text width same as image */
+    text-align: left;
+    max-width: 70%;
     margin: 0;
+    padding-right: 1rem; /* space from right edge */
   }
 }
 }
