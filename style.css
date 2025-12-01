@@ -304,22 +304,28 @@ body:not(.home) {
   ============================ */
   body .work-right-column {
     display: flex;
-    flex-direction: column; /* stack image and text */
-    align-items: flex-end;  /* push everything to the right */
-    gap: 0.5rem;            /* space between image and text */
+    flex-direction: column; /* stack title, image, text */
+    align-items: flex-end;  /* container flush right */
+    gap: 0.5rem;            /* space between items */
     width: 100%;
   }
-
+  
   body .work-right-column .work-image {
     max-width: 70%; /* image width, flush right */
     height: auto;
     display: block;
-    margin: 0;        /* remove extra spacing */
+    margin: 0;        /* no extra space */
   }
-
+  
+  body .work-right-column h2 {
+    text-align: right;  /* title aligned right with container */
+    margin: 0;
+    padding-right: 0;   /* flush with right edge */
+  }
+  
   body .work-right-column p {
-    text-align: right;   /* text right-aligned */
-    padding-right: 1rem; /* spacing from screen edge */
+    text-align: left;   /* text aligned left */
+    max-width: 70%;     /* keep text width same as image */
     margin: 0;
   }
 }
