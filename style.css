@@ -27,7 +27,7 @@ body.home {
 }
 
 body:not(.home) {
-  background-color: #440a0a;
+  background-color: #370808;
   color: white;
 }
 
