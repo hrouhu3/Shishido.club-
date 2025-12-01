@@ -103,6 +103,13 @@ body:not(.home) {
   margin-bottom: 1.25rem; /* 20px */
 }
 
+/* Hide test images on desktop */
+.profile-photo-small,
+.profile-photo-medium,
+.profile-photo-large {
+  display: none;
+}
+
 .main-photo {
   max-width: 62.5rem; /* 1000px */
   width: 100%;
@@ -185,9 +192,15 @@ body:not(.home) {
   ============================ */
   body.profile .content {
     display: flex;
-    flex-direction: row-reverse; /* picture on the right */
-    align-items: flex-start;     /* align top */
-    gap: 1rem;                   /* space between text and image */
+    flex-direction: row-reverse; /* container on the right */
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .profile-photo-container {
+    display: flex;
+    flex-direction: column; /* stack images vertically */
+    gap: 0.5rem; /* space between test images */
   }
 
   body.profile .content p {
@@ -199,6 +212,12 @@ body:not(.home) {
   }
 
   /* Profile photo size options */
+  .profile-photo-small,
+  .profile-photo-medium,
+  .profile-photo-large {
+    display: block; /* show on mobile */
+  }
+
   .profile-photo-small {
     max-width: 30%;
     height: auto;
@@ -258,4 +277,3 @@ body:not(.home) {
     display: block;
   }
 }
-
