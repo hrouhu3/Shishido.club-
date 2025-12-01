@@ -213,7 +213,7 @@ body:not(.home) {
   }
 
   .profile-photo {
-    max-width: 70%;
+    max-width: 50%;
     margin: 0;
   }
 
