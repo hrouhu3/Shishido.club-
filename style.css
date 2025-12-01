@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: 'Lucida Console', Monaco, monospace;
+  font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
   padding: 6.25rem 1.25rem 1.25rem 15rem; /* top right bottom left */
 }
@@ -27,7 +27,7 @@ body.home {
 }
 
 body:not(.home) {
-  background-color: #058e49;
+  background-color: #440a0a;
   color: white;
 }
 
