@@ -187,6 +187,49 @@ body:not(.home) {
     line-height: 1.5;
   }
 
+
+/* ============================
+   Mobile adjustments (smartphones)
+============================ */
+@media (max-width: 600px) {
+
+  /* Base font-size smaller */
+  html {
+    font-size: 14px; /* slightly smaller base size */
+  }
+
+  /* Body padding for mobile - top padding preserved for fixed title */
+  body {
+    padding: 6rem 0 1rem 0; /* top right bottom left */
+  }
+
+  /* Top title */
+  .top-title {
+    font-size: 2rem; /* slightly smaller on mobile */
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1.2rem; 
+  }
+
+  /* Sidebar links */
+  .sidebar {
+    top: 5.5rem; /* slightly smaller top offset */
+    width: 10rem; /* narrower sidebar */
+    gap: 0.5rem;  /* smaller link spacing */
+  }
+
+  .sidebar a {
+    font-size: 0.9rem; 
+  }
+
+  /* Body text default */
+  p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
   /* ============================
      Profile page adjustments
   ============================ */
@@ -194,15 +237,15 @@ body:not(.home) {
     display: flex;
     justify-content: flex-end; /* push column to right */
     width: 100%;
-    padding: 1rem; /* optional padding inside content */
+    padding: 0 0.5rem 0 0; /* optional: horizontal spacing for text only */
   }
 
   .profile-right-column {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;   /* image touches right */
+    align-items: flex-end;   /* image flush right */
     gap: 0.75rem;
-    width: max-content;      /* shrink to content width */
+    width: max-content;      /* shrink column to content width */
   }
 
   .profile-right-column .profile-photo {
@@ -217,7 +260,7 @@ body:not(.home) {
     font-size: 0.9rem;
     line-height: 1.4;
     margin: 0;
-    padding-right: 1rem;     /* text padding from right edge */
+    padding-right: 1rem;     /* keep text away from edge */
   }
 
   /* ============================
@@ -252,5 +295,5 @@ body:not(.home) {
     margin-bottom: 0.75rem;
     display: block;
   }
-
+}
 }
