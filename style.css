@@ -302,35 +302,27 @@ body:not(.home) {
   /* ============================
      Individual work page adjustments
   ============================ */
-  body .work-right-column {
+  body .work-image-container {
     display: flex;
-    flex-direction: column; /* stack title, image, text */
-    align-items: flex-end;  /* container flush right */
-    gap: 0.5rem;            /* space between items */
-    width: 100%;
+    justify-content: flex-end; /* push image to the right */
+    margin-bottom: 0.5rem;
   }
   
-  /* Image stays flush right, no extra space */
-  body .work-right-column .work-image {
-    max-width: 70%; 
+  body .work-image-container .work-image {
+    max-width: 70%;
     height: auto;
-    display: block;
-    margin: 0;        /* no extra space */
+    margin: 0; /* flush right */
   }
   
-  /* Title aligned right, with padding on right */
-  body .work-right-column h2 {
+  body .content h2 {
     text-align: right;
     margin: 0;
     padding-right: 1rem; /* space from right edge */
   }
   
-  /* Paragraph text left-aligned, same width as image, with right padding */
-  body .work-right-column p {
+  body .content p {
     text-align: left;
-    max-width: 70%;
-    margin: 0;
-    padding-right: 1rem; /* space from right edge */
+    margin: 0.5rem 1rem 1rem 0; /* full width minus right padding */
   }
 }
 }
