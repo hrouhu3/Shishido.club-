@@ -192,34 +192,33 @@ body:not(.home) {
 ============================ */
 body.profile .content {
   display: flex;
-  justify-content: flex-end; /* push the column to the right */
+  justify-content: flex-end; /* still push content to right side */
+  width: 100%;
 }
 
 .profile-right-column {
   display: flex;
-  flex-direction: column; /* stack image + text vertically */
-  align-items: flex-end;   /* right-align everything */
-  gap: 0.75rem;            /* spacing between image and text */
+  flex-direction: column; 
+  align-items: flex-end;   /* image touches right */
+  gap: 0.75rem;
+  width: 100%;             /* full width so text can have padding */
 }
 
 .profile-right-column .profile-photo {
-  max-width: 70%;  /* image takes 70% of container width */
+  max-width: 70%;  /* image size */
   height: auto;
   display: block;
-  margin: 0;
+  margin: 0;       /* no extra margin */
 }
 
 body.profile .content p {
-  text-align: right;      /* right-align text */
+  text-align: right;
   font-size: 0.9rem;
   line-height: 1.4;
   margin: 0;
+  padding-right: 1rem; /* space from screen edge */
 }
 
-/* Email on single line */
-.content p span.email {
-  white-space: nowrap;
-}
 
 
   /* ============================
