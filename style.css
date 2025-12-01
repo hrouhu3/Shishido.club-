@@ -32,21 +32,29 @@ body:not(.home) {
 }
 
 /* ============================
-   Top Title – consistent across pages
+   Top Title / Logo
 ============================ */
 .top-title {
-  font-size: 2.25rem; /* same size for all pages (desktop) */
-  margin-bottom: 1.25rem; 
-  font-weight: bold;
   position: fixed;
-  top: 1.25rem; /* same top offset on all pages */
-  left: 1.25rem; /* same left offset on all pages */
+  top: 1.25rem;
+  left: 1.25rem;
+  margin: 0;
+  padding: 0;
   z-index: 1000;
 }
 
 .top-title a {
-  color: inherit;
+  display: inline-block;
   text-decoration: none;
+  color: inherit;
+}
+
+/* Logo styles */
+.logo {
+  width: 200px; /* adjust if you want bigger or smaller */
+  height: auto;
+  filter: invert(1) brightness(200%);
+  display: block;
 }
 
 /* ============================
@@ -60,18 +68,18 @@ body:not(.home) {
 /* Sidebar */
 .sidebar {
   position: fixed;
-  top: 6.25rem; /* 100px */
-  left: 1.25rem; /* 20px */
+  top: 11rem; /* logo top + logo height + spacing */
+  left: 1.25rem;
   width: 12.5rem; /* 200px */
   display: flex;
   flex-direction: column;
-  gap: 0.9375rem; /* 15px */
+  gap: 0.9375rem;
 }
 
 .sidebar a {
   color: inherit;
   text-decoration: none;
-  font-size: 1rem; /* 16px */
+  font-size: 1rem;
   transition: all 0.3s ease;
 }
 
@@ -86,7 +94,7 @@ body:not(.home) {
 /* Content */
 .content {
   flex: 1;
-  padding-top: 1.25rem; /* 20px */
+  padding-top: 1.25rem;
 }
 
 .content p {
@@ -100,10 +108,9 @@ body:not(.home) {
 .profile-photo {
   max-width: 18.75rem; /* 300px */
   width: 100%;
-  margin-bottom: 1.25rem; /* 20px */
+  margin-bottom: 1.25rem;
 }
 
-/* Hide test images on desktop */
 .profile-photo-small,
 .profile-photo-medium,
 .profile-photo-large {
@@ -113,21 +120,21 @@ body:not(.home) {
 .main-photo {
   max-width: 62.5rem; /* 1000px */
   width: 100%;
-  margin-top: -4.6875rem; /* -75px */
-  margin-bottom: 1.25rem; /* 20px */
+  margin-top: -4.6875rem;
+  margin-bottom: 1.25rem;
 }
 
 /* Work Gallery */
 .work-gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem; /* 20px */
+  gap: 1.25rem;
   margin-top: 1.25rem;
 }
 
 .work-gallery a {
   display: block;
-  width: 31.25rem;  /* 500px */
+  width: 31.25rem; /* 500px */
   height: 31.25rem; /* 500px */
 }
 
@@ -138,7 +145,7 @@ body:not(.home) {
   display: block;
 }
 
-/* Individual work images (Work1.html etc.) */
+/* Individual Work Images */
 .work-image {
   max-height: 500px;
   width: auto;
@@ -146,76 +153,33 @@ body:not(.home) {
 }
 
 /* ============================
-   Mobile adjustments (smartphones)
+   MOBILE — SMARTPHONES
 ============================ */
 @media (max-width: 600px) {
 
-  /* Base font-size smaller */
   html {
-    font-size: 14px; /* slightly smaller base size */
+    font-size: 14px;
   }
 
-  /* Remove default body padding on mobile */
   body {
-    padding: 0; /* now you control spacing per container */
+    padding: 6rem 0 1rem 0; /* no default side padding */
   }
 
-  /* Top title */
+  /* Logo smaller on mobile */
+  .logo {
+    width: 6rem;
+  }
+
   .top-title {
-    font-size: 2rem; /* slightly smaller on mobile */
+    font-size: 2rem;
   }
 
-  /* Headings */
   h1, h2, h3, h4, h5, h6 {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
   }
 
-  /* Sidebar links */
   .sidebar {
-    top: 5.5rem; /* slightly smaller top offset */
-    width: 10rem; /* narrower sidebar */
-    gap: 0.5rem;  /* smaller link spacing */
-  }
-
-  .sidebar a {
-    font-size: 0.9rem; 
-  }
-
-  /* Body text default */
-  p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-
-/* ============================
-   Mobile adjustments (smartphones)
-============================ */
-@media (max-width: 600px) {
-
-  /* Base font-size smaller */
-  html {
-    font-size: 14px; /* slightly smaller base size */
-  }
-
-  /* Body padding for mobile */
-  body {
-    padding: 6rem 0 1rem 0; /* no default side padding, can add manually */
-  }
-
-  /* Top title */
-  .top-title {
-    font-size: 2rem; /* slightly smaller on mobile */
-  }
-
-  /* Headings */
-  h1, h2, h3, h4, h5, h6 {
-    font-size: 1.2rem; 
-  }
-
-  /* Sidebar links */
-  .sidebar {
-    top: 5.5rem;
+    top: 5.5rem; /* logo top + mobile logo height + spacing */
     width: 10rem;
     gap: 0.5rem;
   }
@@ -224,14 +188,13 @@ body:not(.home) {
     font-size: 0.9rem;
   }
 
-  /* Body text */
   p {
     font-size: 0.95rem;
     line-height: 1.5;
   }
 
   /* ============================
-     Profile page adjustments
+     Profile Page Mobile
   ============================ */
   body.profile .content {
     display: flex;
@@ -247,10 +210,8 @@ body:not(.home) {
     width: max-content;
   }
 
-  .profile-right-column .profile-photo {
+  .profile-photo {
     max-width: 70%;
-    height: auto;
-    display: block;
     margin: 0;
   }
 
@@ -262,16 +223,10 @@ body:not(.home) {
     padding-right: 1rem;
   }
 
-  /* Email on single line */
-  .content p span.email {
-    white-space: nowrap;
-  }
-
   /* ============================
-     Work gallery adjustments
+     Work Gallery Mobile
   ============================ */
   .work-gallery {
-    display: flex;
     flex-direction: column;
     gap: 0.5rem;
     margin: 0 auto;
@@ -281,45 +236,32 @@ body:not(.home) {
   .work-gallery a {
     width: 100%;
     height: auto;
-    margin-right: 0;
   }
 
-  .work-gallery img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
+  .work-gallery img,
   .work-image {
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-right: 0;
-    margin-bottom: 0.75rem;
-    display: block;
   }
 
   /* ============================
-     Individual work page adjustments
+     Individual Work Page Mobile
   ============================ */
-body .work-image-container {
-  display: flex;
-  justify-content: flex-end; /* push image to right */
-  margin-bottom: 0.5rem;
-}
+  .work-image-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+  }
 
-body .work-image-container .work-image {
-  max-width: 70%;
-  height: auto;
-  margin: 0; /* flush right */
-}
+  .work-image-container .work-image {
+    max-width: 70%;
+    margin: 0;
+  }
 
-body .content p {
-  text-align: left;       /* text left-aligned */
-  margin: 0;
-  padding: 0 1rem 1rem 1rem; /* space on left and right like index */
-}
-
-
-}
+  body .content p {
+    text-align: left;
+    margin: 0;
+    padding: 0 1rem 1rem 1rem; /* same spacing as index */
+  }
 }
