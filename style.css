@@ -314,17 +314,12 @@ body .work-image-container .work-image {
   margin: 0; /* flush right */
 }
 
-body .content h2 {
-  text-align: right;      /* title aligned right */
-  margin: 0;
-  padding: 0 1rem 0 1rem; /* space on left and right same as index? */
-}
-
 body .content p {
   text-align: left;       /* text left-aligned */
   margin: 0;
-  padding: 0 1rem 1rem 1rem; /* same left and right padding as title */
+  padding: 0 1rem 1rem 1rem; /* space on left and right like index */
 }
+
 
 }
 }
