@@ -192,10 +192,17 @@ body:not(.home) {
   ============================ */
   body.profile .content {
     display: flex;
-    flex-direction: row-reverse; /* container on the right */
-    align-items: flex-start;
-    gap: 1rem;
+    justify-content: flex-end; /* push the column to the right */
   }
+  
+  .profile-right-column {
+    display: flex;
+    flex-direction: column; /* stack images and text vertically */
+    justify-content: flex-end; /* text at the bottom */
+    align-items: flex-end; /* right-align everything */
+    gap: 0.5rem; /* spacing between images and text */
+  }
+  
   
   .profile-photo-container {
     display: flex;
@@ -219,21 +226,21 @@ body:not(.home) {
   }
 
   .profile-photo-small {
-    max-width: 30%;
+    max-width: 50%;
     height: auto;
     display: block;
     margin: 0;
   }
 
   .profile-photo-medium {
-    max-width: 40%;
+    max-width: 60%;
     height: auto;
     display: block;
     margin: 0;
   }
 
   .profile-photo-large {
-    max-width: 50%;
+    max-width: 70%;
     height: auto;
     display: block;
     margin: 0;
