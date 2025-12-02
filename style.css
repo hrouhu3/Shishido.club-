@@ -24,9 +24,9 @@ body.home {
   background-color: #370808; /* fallback if image fails to load */
   background-image: url('images/webp/BG.webp');
   background-repeat: no-repeat;
-  background-size: cover;       
-  background-position: center;  
-  background-attachment: fixed; 
+  background-size: cover;       /* fill entire area */
+  background-position: center;  /* show the middle part */
+  background-attachment: fixed; /* optional: parallax effect on desktop */
   color: white;
 }
 
@@ -50,12 +50,12 @@ body:not(.home) {
 .top-title a {
   display: inline-block;
   text-decoration: none;
-  color: inherit;
+  color: white; /* force white on desktop */
 }
 
 /* Logo styles */
 .logo {
-  width: 200px;
+  width: 200px; /* adjust if you want bigger or smaller */
   height: auto;
   filter: invert(1) brightness(200%);
   display: block;
@@ -72,15 +72,17 @@ body:not(.home) {
 /* Sidebar */
 .sidebar {
   position: fixed;
-  top: 11rem;
+  top: 11rem; /* logo top + logo height + spacing */
   left: 1.25rem;
-  width: 12.5rem;
+  width: 12.5rem; /* 200px */
   display: flex;
   flex-direction: column;
   gap: 0.9375rem;
 }
 
 .sidebar a {
+  color: white; /* force desktop links to white */
+  text-decoration: none;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
@@ -102,7 +104,7 @@ body:not(.home) {
 .content p {
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1rem;
+  color: white; /* force white text on desktop */
 }
 
 /* ============================
@@ -117,6 +119,7 @@ body:not(.home) {
 .main-photo {
   max-width: 62.5rem; /* 1000px */
   width: 100%;
+  margin-top: -4.6875rem;
   margin-bottom: 1.25rem;
 }
 
@@ -129,8 +132,9 @@ body:not(.home) {
 }
 
 .work-gallery a {
-  flex: 1 1 calc(33.33% - 1rem); /* responsive 3 columns */
-  aspect-ratio: 1/1; /* maintain square */
+  display: block;
+  width: 31.25rem; /* 500px fixed for desktop */
+  height: 31.25rem; /* 500px fixed for desktop */
 }
 
 .work-gallery img {
@@ -142,8 +146,8 @@ body:not(.home) {
 
 /* Individual Work Images */
 .work-image {
-  max-width: 100%;
-  height: auto;
+  max-height: 500px;
+  width: auto;
   margin-bottom: 20px;
 }
 
@@ -157,11 +161,11 @@ body:not(.home) {
   }
 
   body {
-    padding: 6rem 0 1rem 0;
+    padding: 6rem 0 1rem 0; /* no default side padding */
   }
 
   body.home {
-    background-attachment: scroll;
+    background-attachment: scroll; /* better for mobile performance */
   }
 
   /* Logo smaller on mobile */
@@ -179,23 +183,24 @@ body:not(.home) {
 
   /* Sidebar */
   .sidebar {
-    top: 5.5rem;
+    top: 5.5rem; /* logo top + mobile logo height + spacing */
     width: 10rem;
     gap: 0.5rem;
   }
 
   .sidebar a {
     font-size: 0.9rem;
-    color: inherit;
+    color: inherit; /* allows mobile links to inherit text color */
     text-decoration: none;
-    -webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%; /* prevents font scaling on tap */
     transition: all 0.3s ease;
   }
 
+  /* Keep bold on tap but remove blue and scaling */
   .sidebar a:active,
   .sidebar a:focus {
-    font-weight: bold;
-    color: inherit;
+    font-weight: bold; /* keeps your desired bold effect */
+    color: inherit; /* prevents blue flash */
     outline: none;
   }
 
@@ -208,7 +213,9 @@ body:not(.home) {
     line-height: 1.5;
   }
 
-  /* Profile Page Mobile */
+  /* ============================
+     Profile Page Mobile
+  ============================ */
   body.profile .content {
     display: flex;
     justify-content: flex-end;
@@ -236,7 +243,9 @@ body:not(.home) {
     padding-right: 1rem;
   }
 
-  /* Work Gallery Mobile */
+  /* ============================
+     Work Gallery Mobile
+  ============================ */
   .work-gallery {
     flex-direction: column;
     gap: 0.5rem;
@@ -246,7 +255,7 @@ body:not(.home) {
 
   .work-gallery a {
     width: 100%;
-    height: auto;
+    height: auto; /* flexible height */
   }
 
   .work-gallery img,
@@ -256,7 +265,9 @@ body:not(.home) {
     height: auto;
   }
 
-  /* Individual Work Page Mobile */
+  /* ============================
+     Individual Work Page Mobile
+  ============================ */
   .work-image-container {
     display: flex;
     justify-content: flex-end;
@@ -271,13 +282,13 @@ body:not(.home) {
   body .content p {
     text-align: left;
     margin: 0;
-    padding: 0 1rem 1rem 1rem;
+    padding: 0 1rem 1rem 1rem; /* same spacing as index */
   }
 
   /* Safari / mobile link fixes */
   a, a:visited {
     color: inherit !important;
     text-decoration: none !important;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent; /* removes blue overlay on tap */
   }
 }
