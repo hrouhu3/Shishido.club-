@@ -21,10 +21,12 @@ body {
    Page Backgrounds
 ============================ */
 body.home {
-  /*background: url('images/bird.jpeg') no-repeat center center fixed;
-  background-size: cover;
-  color: white; */
-  background-color: #370808; /* same as other pages, or pick your color */
+  background-color: #370808; /* fallback if image fails to load */
+  background-image: url('images/BG.webp');
+  background-repeat: no-repeat;
+  background-size: cover;       /* fill entire area */
+  background-position: center;  /* show the middle part */
+  background-attachment: fixed; /* optional: parallax effect on desktop */
   color: white;
 }
 
@@ -167,6 +169,10 @@ body:not(.home) {
     padding: 6rem 0 1rem 0; /* no default side padding */
   }
 
+  body.home {
+    background-attachment: scroll; /* better for mobile performance */
+  }
+
   /* Logo smaller on mobile */
   .logo {
     width: 6rem;
@@ -194,6 +200,7 @@ body:not(.home) {
     font-size: 0.95rem;
     line-height: 1.5;
   }
+}
 
   /* ============================
      Profile Page Mobile
@@ -266,4 +273,4 @@ body:not(.home) {
     margin: 0;
     padding: 0 1rem 1rem 1rem; /* same spacing as index */
   }
-}
+
