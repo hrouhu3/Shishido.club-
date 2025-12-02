@@ -167,6 +167,12 @@ body:not(.home) {
 
   body {
     padding: 6rem 0 1rem 0;
+    opacity: 0;                /* fade-in setup */
+    transition: opacity 0.2s ease-out;
+  }
+
+  body.page-loaded {
+    opacity: 1;
   }
 
   body.home {
@@ -194,6 +200,9 @@ body:not(.home) {
 
   .sidebar a {
     font-size: 0.9rem;
+    color: inherit;            /* ← prevents BLUE links */
+    text-decoration: none;
+    display: block;
   }
 
   p {
@@ -240,6 +249,8 @@ body:not(.home) {
   .work-gallery a {
     width: 100%;
     height: auto;
+    color: inherit;            /* ← double protection */
+    text-decoration: none;
   }
 
   .work-gallery img,
@@ -268,38 +279,18 @@ body:not(.home) {
   }
 
   /* ============================
-     MOBILE FLASH FIX — FINAL
+     SAFARI FLASH / BLUE LINK FIX
   ============================ */
 
-  /* Prevent temporary blue links and text-size jump */
-  a,
-  a:visited,
-  a:active,
-  a:focus {
-    color: inherit !important;
-    font-size: inherit !important;
-    text-decoration: none;
+  a, a:visited, a:active, a:focus {
+    color: inherit !important;     /* ← kills blue flash */
+    text-decoration: none !important;
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* Prevent Safari preload/resizing */
-  a {
-    display: inline-block;
-  }
-
-  /* Ensure page background + text loads before rendering */
+  /* Ensure text + background loads before render */
   html, body {
-    background-color: #370808;
+    background-color: #370808;     /* keep your background */
     color: white;
-  }
-
-  /* Fade-in page only once fully rendered */
-  body {
-    opacity: 0;
-    transition: opacity 0.15s ease-out;
-  }
-
-  body.page-loaded {
-    opacity: 1;
   }
 }
