@@ -22,7 +22,7 @@ body {
 ============================ */
 body.home {
   background-color: #370808; /* fallback if image fails to load */
-  background-image: url('images/BG.webp');
+  background-image: url('images/webp/BG.webp');
   background-repeat: no-repeat;
   background-size: cover;       /* fill entire area */
   background-position: center;  /* show the middle part */
