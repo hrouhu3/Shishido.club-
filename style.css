@@ -161,12 +161,12 @@ body:not(.home) {
 ============================ */
 @media (max-width: 600px) {
 
-  /* Base font size */
+  /* Base font */
   html {
     font-size: 14px;
   }
 
-  /* Body & fade-in */
+  /* Body */
   body {
     padding: 6rem 0 1rem 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -175,10 +175,11 @@ body:not(.home) {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: scroll; /* mobile-friendly */
+    background-attachment: scroll;
     color: white;
     opacity: 0;
     transition: opacity 0.25s ease-out;
+    position: relative;
   }
 
   body.page-loaded {
@@ -186,34 +187,34 @@ body:not(.home) {
   }
 
   /* Top title / logo */
-  .logo {
-    width: 6rem;
-    height: auto;
-    display: block;
-    filter: invert(1) brightness(200%);
-  }
-
   .top-title {
-    font-size: 2rem;
     position: fixed;
     top: 1rem;
     left: 1rem;
     z-index: 1000;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-size: 1.2rem;
+  .top-title a {
+    display: block;
+  }
+
+  .logo {
+    width: 6rem;
+    height: auto;
+    filter: invert(1) brightness(200%);
+    display: block;
   }
 
   /* Sidebar */
   .sidebar {
     position: fixed;
-    top: 5.5rem;
+    top: 5.5rem;  /* below logo */
     left: 1rem;
     width: 10rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    z-index: 900;
   }
 
   .sidebar a {
@@ -224,16 +225,23 @@ body:not(.home) {
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* Paragraphs */
-  p {
+  /* Content */
+  .content {
+    flex: 1;
+    padding: 1rem;
+    margin-top: 8rem; /* push content below top logo + sidebar */
+  }
+
+  body .content p {
     font-size: 0.95rem;
     line-height: 1.5;
+    margin: 0 0 1rem 0;
+    text-align: left;
   }
 
   /* Profile page */
   body.profile .content {
-    display: flex;
-    justify-content: flex-end;
+    display: block; /* stack everything */
     width: 100%;
   }
 
@@ -247,22 +255,24 @@ body:not(.home) {
 
   .profile-photo {
     max-width: 50%;
-    margin: 0;
+    margin: 0 auto 1rem auto;
+    display: block;
   }
 
   body.profile .content p {
     text-align: right;
     font-size: 0.9rem;
     line-height: 1.4;
-    margin: 0;
+    margin: 0 0 1rem 0;
     padding-right: 1rem;
   }
 
-  /* Work Gallery */
+  /* Work gallery */
   .work-gallery {
+    display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin: 0 auto;
+    margin: 1rem auto;
     padding: 0 0.5rem;
   }
 
@@ -278,9 +288,10 @@ body:not(.home) {
     width: 100%;
     max-width: 100%;
     height: auto;
+    display: block;
   }
 
-  /* Individual work page images */
+  /* Individual work images */
   .work-image-container {
     display: flex;
     justify-content: flex-end;
@@ -292,14 +303,7 @@ body:not(.home) {
     margin: 0;
   }
 
-  /* Content paragraphs */
-  body .content p {
-    text-align: left;
-    margin: 0;
-    padding: 0 1rem 1rem 1rem;
-  }
-
-  /* Global link fixes for Safari */
+  /* Fix Safari blue flash for links */
   a, a:visited, a:active, a:focus {
     color: inherit !important;
     text-decoration: none !important;
