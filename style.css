@@ -283,3 +283,22 @@ a, a:visited, a:active, a:focus {
   outline: none;                      /* remove focus outline */
   -webkit-tap-highlight-color: transparent; /* remove iOS/Android tap highlight */
 }
+
+/* ============================
+   Mobile tap & flash fixes
+============================ */
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+a:active {
+  color: inherit;
+  font-size: inherit;
+}
+
+body {
+  -webkit-backface-visibility: hidden;
+}
