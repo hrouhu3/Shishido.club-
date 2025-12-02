@@ -195,17 +195,22 @@ body:not(.home) {
 
   .sidebar a {
     font-size: 0.9rem;
-    color: inherit; /* ensures color stays the same */
+    color: inherit; /* keeps normal color */
     text-decoration: none;
     -webkit-text-size-adjust: 100%; /* prevents font scaling on tap */
+    transition: all 0.3s ease;
   }
 
-  /* Prevent bold/size change when tapping on mobile */
+  /* Keep bold on tap but remove blue and scaling */
   .sidebar a:active,
   .sidebar a:focus {
-    font-weight: normal;
-    color: inherit;
+    font-weight: bold; /* keeps your desired bold effect */
+    color: inherit; /* prevents blue flash */
     outline: none;
+  }
+
+  .sidebar a:hover {
+    text-decoration: underline;
   }
 
   p {
@@ -285,10 +290,10 @@ body:not(.home) {
     padding: 0 1rem 1rem 1rem; /* same spacing as index */
   }
 
-  /* Safari / blue link fix */
-  a, a:visited, a:active, a:focus {
+  /* Safari / mobile link fixes */
+  a, a:visited {
     color: inherit !important;
     text-decoration: none !important;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent; /* removes blue overlay on tap */
   }
 }
