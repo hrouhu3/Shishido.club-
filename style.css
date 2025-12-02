@@ -274,3 +274,12 @@ body:not(.home) {
     padding: 0 1rem 1rem 1rem; /* same spacing as index */
   }
 
+/* ============================
+   Remove link flash on mobile / tap highlight
+============================ */
+a, a:visited, a:active, a:focus {
+  color: inherit;                     /* keep your link color */
+  font-size: inherit;                 /* prevent size change */
+  outline: none;                      /* remove focus outline */
+  -webkit-tap-highlight-color: transparent; /* remove iOS/Android tap highlight */
+}
