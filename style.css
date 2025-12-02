@@ -145,12 +145,40 @@ body:not(.home) {
   display: block;
 }
 
-/* Individual Work Images */
-.work-image {
-  max-height: 500px;
-  width: auto;
-  margin-bottom: 20px;
+/* First image + text container */
+.work-first {
+  display: flex;            /* side-by-side on desktop */
+  gap: 1.25rem;             /* space between image and text */
+  align-items: flex-start;  /* text aligns to top by default */
+  margin-bottom: 2rem;      /* space below this section */
 }
+
+/* Image container */
+.work-first .work-image-container {
+  flex: 1;                  /* image takes half the space */
+}
+
+/* Text container */
+.work-first .work-text {
+  flex: 1;                  /* text takes the other half */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* aligns text to bottom of image if shorter */
+}
+
+/* Additional images container */
+.work-additional-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.work-additional-images .work-image {
+  width: 31.25rem;  /* same width as main gallery images on desktop */
+  height: 31.25rem; /* maintain square layout for consistency */
+  object-fit: cover;
+}
+
 
 /* ============================
    MOBILE — SMARTPHONES
@@ -269,27 +297,25 @@ body:not(.home) {
   /* ============================
      Individual Work Page Mobile
   ============================ */
-  .work-image-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 0.5rem;
+  .work-first {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  .work-image-container .work-image {
-    max-width: 70%;
-    margin: 0;
+  .work-first .work-image-container,
+  .work-first .work-text {
+    width: 100%;
   }
 
-  body .content p {
-    text-align: left;
-    margin: 0;
-    padding: 0 1rem 1rem 1rem; /* same spacing as index */
+  /* Additional images stacked full width */
+  .work-additional-images {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  /* Safari / mobile link fixes */
-  a, a:visited {
-    color: inherit !important;
-    text-decoration: none !important;
-    -webkit-tap-highlight-color: transparent; /* removes blue overlay on tap */
+  .work-additional-images .work-image {
+    width: 100%;
+    height: auto; /* flexible height */
+    max-width: 100%;
   }
 }
