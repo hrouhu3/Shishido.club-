@@ -172,7 +172,7 @@ body:not(.home) {
   }
 
   body.page-loaded {
-    opacity: 1;
+    opacity: 1 !important;
   }
 
   body.home {
