@@ -166,11 +166,11 @@ body:not(.home) {
   }
 
   body {
-    padding: 6rem 0 1rem 0; /* no default side padding */
+    padding: 6rem 0 1rem 0;
   }
 
   body.home {
-    background-attachment: scroll; /* better for mobile performance */
+    background-attachment: scroll;
   }
 
   /* Logo smaller on mobile */
@@ -187,7 +187,7 @@ body:not(.home) {
   }
 
   .sidebar {
-    top: 5.5rem; /* logo top + mobile logo height + spacing */
+    top: 5.5rem;
     width: 10rem;
     gap: 0.5rem;
   }
@@ -200,11 +200,8 @@ body:not(.home) {
     font-size: 0.95rem;
     line-height: 1.5;
   }
-}
 
-  /* ============================
-     Profile Page Mobile
-  ============================ */
+  /* Profile Page Mobile */
   body.profile .content {
     display: flex;
     justify-content: flex-end;
@@ -232,9 +229,7 @@ body:not(.home) {
     padding-right: 1rem;
   }
 
-  /* ============================
-     Work Gallery Mobile
-  ============================ */
+  /* Work Gallery Mobile */
   .work-gallery {
     flex-direction: column;
     gap: 0.5rem;
@@ -254,9 +249,7 @@ body:not(.home) {
     height: auto;
   }
 
-  /* ============================
-     Individual Work Page Mobile
-  ============================ */
+  /* Individual Work Page Mobile */
   .work-image-container {
     display: flex;
     justify-content: flex-end;
@@ -271,51 +264,42 @@ body:not(.home) {
   body .content p {
     text-align: left;
     margin: 0;
-    padding: 0 1rem 1rem 1rem; /* same spacing as index */
+    padding: 0 1rem 1rem 1rem;
   }
 
-/* ============================
-   HTML & Body Global Styles
-   (prevents mobile flash)
-============================ */
-html, body {
-  background-color: #370808; /* fallback color */
-  color: white;
-}
+  /* ============================
+     MOBILE FLASH FIX — FINAL
+  ============================ */
 
-/* ============================
-   Remove link flash on mobile / tap highlight
-============================ */
-a, a:visited, a:active, a:focus {
-  color: inherit;                     /* keep your link color */
-  font-size: inherit;                 /* prevent size change */
-  outline: none;                      /* remove focus outline */
-  display: inline-block;              /* prevent temporary resize */
-  -webkit-tap-highlight-color: transparent; /* remove iOS/Android tap highlight */
-}
+  /* Prevent temporary blue links and text-size jump */
+  a,
+  a:visited,
+  a:active,
+  a:focus {
+    color: inherit !important;
+    font-size: inherit !important;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
 
-/* ============================
-   Mobile tap & flash fixes
-============================ */
-a {
-  -webkit-tap-highlight-color: transparent; 
-  -webkit-user-select: none;  /* Safari/Chrome */
-  -moz-user-select: none;     /* Firefox */
-  -ms-user-select: none;      /* IE/Edge */
-  user-select: none;          /* standard */
-  -ms-touch-action: manipulation; /* IE/Edge touch */
-  touch-action: manipulation;     /* standard */
-}
+  /* Prevent Safari preload/resizing */
+  a {
+    display: inline-block;
+  }
 
-a:active {
-  color: inherit;
-  font-size: inherit;
-}
+  /* Ensure page background + text loads before rendering */
+  html, body {
+    background-color: #370808;
+    color: white;
+  }
 
-/* ============================
-   Backface visibility fix
-============================ */
-body {
-  -webkit-backface-visibility: hidden; /* Safari/Chrome */
-  backface-visibility: hidden;         /* standard */
+  /* Fade-in page only once fully rendered */
+  body {
+    opacity: 0;
+    transition: opacity 0.15s ease-out;
+  }
+
+  body.page-loaded {
+    opacity: 1;
+  }
 }
