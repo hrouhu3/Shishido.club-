@@ -24,9 +24,9 @@ body.home {
   background-color: #370808; /* fallback if image fails to load */
   background-image: url('images/webp/BG.webp');
   background-repeat: no-repeat;
-  background-size: cover;       /* fill entire area */
-  background-position: center;  /* show the middle part */
-  background-attachment: fixed; /* optional: parallax effect on desktop */
+  background-size: cover;       
+  background-position: center;  
+  background-attachment: fixed; 
   color: white;
 }
 
@@ -55,7 +55,7 @@ body:not(.home) {
 
 /* Logo styles */
 .logo {
-  width: 200px; /* adjust if you want bigger or smaller */
+  width: 200px;
   height: auto;
   filter: invert(1) brightness(200%);
   display: block;
@@ -72,17 +72,15 @@ body:not(.home) {
 /* Sidebar */
 .sidebar {
   position: fixed;
-  top: 11rem; /* logo top + logo height + spacing */
+  top: 11rem;
   left: 1.25rem;
-  width: 12.5rem; /* 200px */
+  width: 12.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.9375rem;
 }
 
 .sidebar a {
-  color: inherit;
-  text-decoration: none;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
@@ -104,6 +102,7 @@ body:not(.home) {
 .content p {
   font-size: 1rem;
   line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
 /* ============================
@@ -115,16 +114,9 @@ body:not(.home) {
   margin-bottom: 1.25rem;
 }
 
-.profile-photo-small,
-.profile-photo-medium,
-.profile-photo-large {
-  display: none;
-}
-
 .main-photo {
   max-width: 62.5rem; /* 1000px */
   width: 100%;
-  margin-top: -4.6875rem;
   margin-bottom: 1.25rem;
 }
 
@@ -137,9 +129,8 @@ body:not(.home) {
 }
 
 .work-gallery a {
-  display: block;
-  width: 31.25rem; /* 500px */
-  height: 31.25rem; /* 500px */
+  flex: 1 1 calc(33.33% - 1rem); /* responsive 3 columns */
+  aspect-ratio: 1/1; /* maintain square */
 }
 
 .work-gallery img {
@@ -151,8 +142,8 @@ body:not(.home) {
 
 /* Individual Work Images */
 .work-image {
-  max-height: 500px;
-  width: auto;
+  max-width: 100%;
+  height: auto;
   margin-bottom: 20px;
 }
 
@@ -166,11 +157,11 @@ body:not(.home) {
   }
 
   body {
-    padding: 6rem 0 1rem 0; /* no default side padding */
+    padding: 6rem 0 1rem 0;
   }
 
   body.home {
-    background-attachment: scroll; /* better for mobile performance */
+    background-attachment: scroll;
   }
 
   /* Logo smaller on mobile */
@@ -188,24 +179,23 @@ body:not(.home) {
 
   /* Sidebar */
   .sidebar {
-    top: 5.5rem; /* logo top + mobile logo height + spacing */
+    top: 5.5rem;
     width: 10rem;
     gap: 0.5rem;
   }
 
   .sidebar a {
     font-size: 0.9rem;
-    color: inherit; /* keeps normal color */
+    color: inherit;
     text-decoration: none;
-    -webkit-text-size-adjust: 100%; /* prevents font scaling on tap */
+    -webkit-text-size-adjust: 100%;
     transition: all 0.3s ease;
   }
 
-  /* Keep bold on tap but remove blue and scaling */
   .sidebar a:active,
   .sidebar a:focus {
-    font-weight: bold; /* keeps your desired bold effect */
-    color: inherit; /* prevents blue flash */
+    font-weight: bold;
+    color: inherit;
     outline: none;
   }
 
@@ -218,9 +208,7 @@ body:not(.home) {
     line-height: 1.5;
   }
 
-  /* ============================
-     Profile Page Mobile
-  ============================ */
+  /* Profile Page Mobile */
   body.profile .content {
     display: flex;
     justify-content: flex-end;
@@ -248,9 +236,7 @@ body:not(.home) {
     padding-right: 1rem;
   }
 
-  /* ============================
-     Work Gallery Mobile
-  ============================ */
+  /* Work Gallery Mobile */
   .work-gallery {
     flex-direction: column;
     gap: 0.5rem;
@@ -270,9 +256,7 @@ body:not(.home) {
     height: auto;
   }
 
-  /* ============================
-     Individual Work Page Mobile
-  ============================ */
+  /* Individual Work Page Mobile */
   .work-image-container {
     display: flex;
     justify-content: flex-end;
@@ -287,13 +271,13 @@ body:not(.home) {
   body .content p {
     text-align: left;
     margin: 0;
-    padding: 0 1rem 1rem 1rem; /* same spacing as index */
+    padding: 0 1rem 1rem 1rem;
   }
 
   /* Safari / mobile link fixes */
   a, a:visited {
     color: inherit !important;
     text-decoration: none !important;
-    -webkit-tap-highlight-color: transparent; /* removes blue overlay on tap */
+    -webkit-tap-highlight-color: transparent;
   }
 }
