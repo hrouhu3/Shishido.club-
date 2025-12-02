@@ -161,29 +161,20 @@ body:not(.home) {
 ============================ */
 @media (max-width: 600px) {
 
-  /* Base font */
   html {
     font-size: 14px;
   }
 
-  /* Body */
   body {
-    padding: 6rem 0 1rem 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #370808;  /* fallback */
+    padding: 6rem 1rem 1rem 1rem;
+    background-color: #370808;
     background-image: url('images/webp/BG.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: scroll;
+    background-attachment: scroll; /* no fixed */
     color: white;
-    opacity: 0;
-    transition: opacity 0.25s ease-out;
-    position: relative;
-  }
-
-  body.page-loaded {
-    opacity: 1;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   /* Top title / logo */
@@ -194,21 +185,17 @@ body:not(.home) {
     z-index: 1000;
   }
 
-  .top-title a {
-    display: block;
-  }
-
   .logo {
     width: 6rem;
     height: auto;
-    filter: invert(1) brightness(200%);
     display: block;
+    filter: invert(1) brightness(200%);
   }
 
   /* Sidebar */
   .sidebar {
     position: fixed;
-    top: 5.5rem;  /* below logo */
+    top: 5.5rem; /* below logo */
     left: 1rem;
     width: 10rem;
     display: flex;
@@ -221,27 +208,23 @@ body:not(.home) {
     font-size: 0.9rem;
     color: inherit !important;
     text-decoration: none !important;
-    display: block;
-    -webkit-tap-highlight-color: transparent;
   }
 
   /* Content */
   .content {
     flex: 1;
-    padding: 1rem;
-    margin-top: 8rem; /* push content below top logo + sidebar */
+    padding-top: 8rem; /* push content below logo + sidebar */
   }
 
-  body .content p {
+  .content p {
     font-size: 0.95rem;
     line-height: 1.5;
     margin: 0 0 1rem 0;
-    text-align: left;
   }
 
   /* Profile page */
   body.profile .content {
-    display: block; /* stack everything */
+    display: block;
     width: 100%;
   }
 
@@ -303,7 +286,7 @@ body:not(.home) {
     margin: 0;
   }
 
-  /* Fix Safari blue flash for links */
+  /* Safari / blue link fix */
   a, a:visited, a:active, a:focus {
     color: inherit !important;
     text-decoration: none !important;
