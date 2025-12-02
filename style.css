@@ -275,12 +275,22 @@ body:not(.home) {
   }
 
 /* ============================
+   HTML & Body Global Styles
+   (prevents mobile flash)
+============================ */
+html, body {
+  background-color: #370808; /* fallback color */
+  color: white;
+}
+
+/* ============================
    Remove link flash on mobile / tap highlight
 ============================ */
 a, a:visited, a:active, a:focus {
   color: inherit;                     /* keep your link color */
   font-size: inherit;                 /* prevent size change */
   outline: none;                      /* remove focus outline */
+  display: inline-block;              /* prevent temporary resize */
   -webkit-tap-highlight-color: transparent; /* remove iOS/Android tap highlight */
 }
 
@@ -288,10 +298,13 @@ a, a:visited, a:active, a:focus {
    Mobile tap & flash fixes
 ============================ */
 a {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-select: none;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent; 
+  -webkit-user-select: none;  /* Safari/Chrome */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* IE/Edge */
+  user-select: none;          /* standard */
+  -ms-touch-action: manipulation; /* IE/Edge touch */
+  touch-action: manipulation;     /* standard */
 }
 
 a:active {
@@ -299,6 +312,10 @@ a:active {
   font-size: inherit;
 }
 
+/* ============================
+   Backface visibility fix
+============================ */
 body {
-  -webkit-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Safari/Chrome */
+  backface-visibility: hidden;         /* standard */
 }
