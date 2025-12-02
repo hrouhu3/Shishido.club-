@@ -186,6 +186,7 @@ body:not(.home) {
     font-size: 1.2rem;
   }
 
+  /* Sidebar */
   .sidebar {
     top: 5.5rem; /* logo top + mobile logo height + spacing */
     width: 10rem;
@@ -194,6 +195,17 @@ body:not(.home) {
 
   .sidebar a {
     font-size: 0.9rem;
+    color: inherit; /* ensures color stays the same */
+    text-decoration: none;
+    -webkit-text-size-adjust: 100%; /* prevents font scaling on tap */
+  }
+
+  /* Prevent bold/size change when tapping on mobile */
+  .sidebar a:active,
+  .sidebar a:focus {
+    font-weight: normal;
+    color: inherit;
+    outline: none;
   }
 
   p {
@@ -273,11 +285,10 @@ body:not(.home) {
     padding: 0 1rem 1rem 1rem; /* same spacing as index */
   }
 
-    /* Safari / blue link fix */
+  /* Safari / blue link fix */
   a, a:visited, a:active, a:focus {
     color: inherit !important;
     text-decoration: none !important;
     -webkit-tap-highlight-color: transparent;
   }
 }
-
