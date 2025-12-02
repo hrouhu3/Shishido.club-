@@ -22,7 +22,7 @@ body {
 ============================ */
 body.home {
   background-color: #370808; /* fallback if image fails to load */
-  background-image: url('images/webp/BG.webp');
+  background-image: url('images/BG.webp');
   background-repeat: no-repeat;
   background-size: cover;       /* fill entire area */
   background-position: center;  /* show the middle part */
@@ -166,65 +166,47 @@ body:not(.home) {
   }
 
   body {
-    padding: 6rem 1rem 1rem 1rem;
-    background-color: #370808;
-    background-image: url('images/webp/BG.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll; /* no fixed */
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 6rem 0 1rem 0; /* no default side padding */
   }
 
-  /* Top title / logo */
-  .top-title {
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1000;
+  body.home {
+    background-attachment: scroll; /* better for mobile performance */
   }
 
+  /* Logo smaller on mobile */
   .logo {
     width: 6rem;
-    height: auto;
-    display: block;
-    filter: invert(1) brightness(200%);
   }
 
-  /* Sidebar */
+  .top-title {
+    font-size: 2rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1.2rem;
+  }
+
   .sidebar {
-    position: fixed;
-    top: 5.5rem; /* below logo */
-    left: 1rem;
+    top: 5.5rem; /* logo top + mobile logo height + spacing */
     width: 10rem;
-    display: flex;
-    flex-direction: column;
     gap: 0.5rem;
-    z-index: 900;
   }
 
   .sidebar a {
     font-size: 0.9rem;
-    color: inherit !important;
-    text-decoration: none !important;
   }
 
-  /* Content */
-  .content {
-    flex: 1;
-    padding-top: 8rem; /* push content below logo + sidebar */
-  }
-
-  .content p {
+  p {
     font-size: 0.95rem;
     line-height: 1.5;
-    margin: 0 0 1rem 0;
   }
 
-  /* Profile page */
+  /* ============================
+     Profile Page Mobile
+  ============================ */
   body.profile .content {
-    display: block;
+    display: flex;
+    justify-content: flex-end;
     width: 100%;
   }
 
@@ -238,32 +220,30 @@ body:not(.home) {
 
   .profile-photo {
     max-width: 50%;
-    margin: 0 auto 1rem auto;
-    display: block;
+    margin: 0;
   }
 
   body.profile .content p {
     text-align: right;
     font-size: 0.9rem;
     line-height: 1.4;
-    margin: 0 0 1rem 0;
+    margin: 0;
     padding-right: 1rem;
   }
 
-  /* Work gallery */
+  /* ============================
+     Work Gallery Mobile
+  ============================ */
   .work-gallery {
-    display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin: 1rem auto;
+    margin: 0 auto;
     padding: 0 0.5rem;
   }
 
   .work-gallery a {
     width: 100%;
     height: auto;
-    color: inherit !important;
-    text-decoration: none !important;
   }
 
   .work-gallery img,
@@ -271,10 +251,11 @@ body:not(.home) {
     width: 100%;
     max-width: 100%;
     height: auto;
-    display: block;
   }
 
-  /* Individual work images */
+  /* ============================
+     Individual Work Page Mobile
+  ============================ */
   .work-image-container {
     display: flex;
     justify-content: flex-end;
@@ -286,10 +267,9 @@ body:not(.home) {
     margin: 0;
   }
 
-  /* Safari / blue link fix */
-  a, a:visited, a:active, a:focus {
-    color: inherit !important;
-    text-decoration: none !important;
-    -webkit-tap-highlight-color: transparent;
+  body .content p {
+    text-align: left;
+    margin: 0;
+    padding: 0 1rem 1rem 1rem; /* same spacing as index */
   }
 }
