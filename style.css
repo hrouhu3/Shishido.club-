@@ -155,17 +155,15 @@ body:not(.home) {
 
 /* Image container (original size) */
 .work-first .work-image-container {
-  max-width: 500px;         /* original desktop size */
-  width: auto;
-  height: auto;
+  width: 31.25rem; /* same width as additional images */
+  height: auto;    /* keep aspect ratio */
 }
 
 /* Text container */
 .work-first .work-text {
-  flex: 1;                  /* takes remaining space */
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* aligns text to bottom of image */
+  justify-content: flex-end; /* aligns text bottom to image bottom */
 }
 
 /* Additional images container */
@@ -310,7 +308,7 @@ body:not(.home) {
   .work-first .work-image-container {
     max-width: 70%;   /* keep original mobile size */
     margin-left: auto; /* right-align like before */
-    margin-right: 1rem; /* small right padding */
+    margin-right: 0; /* remove all space on the right */
   }
 
   .work-first .work-text {
