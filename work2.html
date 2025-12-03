@@ -2,24 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Work 2 - Shishido</title>
-  <link rel="icon" href="images/bird.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zabuton Table (Stool)</title>                                                          <!-- change -->
+  <link rel="icon" href="images/logo.png" type="image/png">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 class="top-title"><a href="index.html">Shishido</a></h1>
+  <!-- Top title / logo -->
+  <h1 class="top-title">
+    <a href="index.html">
+      <img src="images/webp/logo.webp" alt="Shishido logo" class="logo">
+    </a>
+  </h1>
 
   <div class="main-container">
-    <div class="sidebar">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <a href="past-works.html">Work</a>
       <a href="profile.html">Profile</a>
-      <a href="past-works.html">Past Works</a>
-    </div>
+    </nav>
 
-    <div class="content">
-      <h2>Work Title 2</h2>
-      <img src="images/webp/work2.webp" alt="Work 2" loading="lazy" style="max-height: 500px; width: auto; margin-bottom: 20px;">
-      <p>Description of the work, techniques used, context, year, etc.</p>
-    </div>
+    <!-- Work content -->
+    <main class="content">
+
+      <!-- ============================
+           Work 1 — First image & description
+      ============================ -->
+      <div class="work-first">
+        <div class="work-image-container"> 
+          <img class="work-image" loading="lazy"
+            src="images/webp/work2.webp" alt="Work 2">                                  <!-- change -->
+        </div>
+    
+        <div class="work-text">
+          <p>
+            <span lang="en">Zabuton Table (Stool)</span><br>                                <!-- change -->
+            <span lang="ja">/座布団テーブル（腰掛け）</span>                                    <!-- change -->
+          </p>
+    
+          <p>                                                                           <!-- change -->
+            <span lang="en">Side table or stool that was inspired by the soft, pillowy texture 
+              of a zabuton, a traditional Japanese cushion and its four corner cords. <br>
+            Size: H270xW400xD400mm<br>
+            Materials: Birch Plywood, 1 mm Beech Veneer</span>
+          </p>
+    
+          <p>                                                                           <!-- change -->
+            <span lang="ja">座布団のふわふわ感、もっちり感と四つ角の紐からデザインしたサイドテーブル、腰掛け<br>
+            サイズ：H270xW400xD400mm<br>
+            素材：シナ合板、ブナ突板 1 mm</span>
+          </p>
+        </div>
+      </div>
+    
+      <!-- ============================
+           Work 1 — Additional images
+      ============================ -->
+      <div class="work-additional-images">                                              <!-- change -->
+        <img src="images/webp/work2_2.webp" alt="Work 2 - 2" class="work-image" loading="lazy">
+        <img src="images/webp/work2_3.webp" alt="Work 2 - 3" class="work-image" loading="lazy">
+      </div>
+
+    </main>
   </div>
+
+  <!-- Scripts -->
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('page-loaded');
+    });
+  </script>
 </body>
 </html>

@@ -187,6 +187,8 @@ body.profile .profile-text p {
 
   .work-first .work-image {
     width: 31.25rem;
+    max-width: 100%;
+    flex-shrink: 1;
     height: auto;
     display: block;
   }
@@ -196,7 +198,8 @@ body.profile .profile-text p {
     flex-direction: column;
     justify-content: flex-end; /* bottom-align text with image */
     max-width: calc(100% - 31.25rem - 1.25rem);
-    height: 100%;
+    min-width: 10rem;
+    height: 100%; /*delete?*/
     box-sizing: border-box;
   }
 
@@ -215,11 +218,12 @@ body.profile .profile-text p {
   }
 
   .work-additional-images .work-image {
-    width: 31.25rem;
-    height: 31.25rem;
-    object-fit: cover;
+    width: 100%;       /* take full width of container */
+    max-width: 31.25rem;   /* ensure it doesn't overflow */
+    height: auto;      /* preserve aspect ratio */
+    object-fit: cover; /* crop if needed */
+    display: block;
   }
-
 }
 
 /* ============================
