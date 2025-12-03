@@ -2,23 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Work 3 - Shishido</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andon Lamp</title>                                                          <!-- change -->
+  <link rel="icon" href="images/logo.png" type="image/png">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 class="top-title"><a href="index.html">Shishido</a></h1>
+  <!-- Top title / logo -->
+  <h1 class="top-title">
+    <a href="index.html">
+      <img src="images/webp/logo.webp" alt="Shishido logo" class="logo">
+    </a>
+  </h1>
 
   <div class="main-container">
-    <div class="sidebar">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <a href="past-works.html">Work</a>
       <a href="profile.html">Profile</a>
-      <a href="past-works.html">Past Works</a>
-    </div>
+    </nav>
 
-    <div class="content">
-      <h2>Work Title 3</h2>
-      <img src="images/work3.png" alt="Work 3" style="max-height: 500px; width: auto; margin-bottom: 20px;">
-      <p>Description of the work, techniques used, context, year, etc.</p>
-    </div>
+    <!-- Work content -->
+    <main class="content">
+
+      <!-- ============================
+           Work — First image & description
+      ============================ -->
+      <div class="work-first">
+        <div class="work-image-container"> 
+          <img class="work-image" loading="lazy"
+            src="images/webp/work3.webp" alt="Work 3">                                  <!-- change -->
+        </div>
+    
+        <div class="work-text">
+          <p>
+            <span lang="en">Andon Lamp</span><br>                                <!-- change -->
+            <span lang="ja">/あんどん</span>                                    <!-- change -->
+          </p>
+    
+          <p>                                                                           <!-- change -->
+            <span lang="en">Lamp with bent-wood frame where light gently
+              glows, expressing the hidden inner spirit of Japan. <br>
+            Size: H450xW300xD300mm<br>
+            Materials: 1 mm Maple Veneer, Washi Paper</span>
+          </p>
+    
+          <p>                                                                           <!-- change -->
+            <span lang="ja">日本人が持つ、秘めた精神性を表したく、曲げ木の枠内で光が灯されるようデザイン、制作した<br>
+            サイズ：H450xW300xD300mm<br>
+            素材：メープル突板1mm、和紙</span>
+          </p>
+        </div>
+      </div>
+    
+      <!-- ============================
+           Work — Additional images
+      ============================ -->
+      <div class="work-additional-images">                                              <!-- change -->
+        <img src="images/webp/work3_2.webp" alt="Work 3 - 2" class="work-image" loading="lazy">
+        <img src="images/webp/work3_3.webp" alt="Work 3 - 3" class="work-image" loading="lazy">
+        <img src="images/webp/work3_5.webp" alt="Work 3 - 5" class="work-image" loading="lazy">
+        <img src="images/webp/work3_6.webp" alt="Work 3 - 6" class="work-image" loading="lazy">
+        <img src="images/webp/work3_7.webp" alt="Work 3 - 7" class="work-image" loading="lazy">
+      </div>
+
+    </main>
   </div>
+
+  <!-- Scripts -->
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('page-loaded');
+    });
+  </script>
 </body>
 </html>
