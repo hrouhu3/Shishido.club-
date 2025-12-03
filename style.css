@@ -106,27 +106,42 @@ body:not(.home) {
 /* ============================
    Desktop Styles
 ============================ */
-@media (min-width: 601px) {
+@media (min-width: 769px) {
 
-  /* Profile Page */
-  body.profile .profile-right-column {
-    display: flex;
-    flex-direction: row;
-    gap: 1.25rem;
-    align-items: flex-end; /* bottom-align text with image */
-  }
+/* Profile Page — Desktop */
+body.profile .profile-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end; /* bottom align photo + text */
+  gap: 1rem;             /* spacing between image and text */
+  width: 100%;
+}
 
-  body.profile .profile-photo {
-    max-width: 18.75rem;  /* 300px */
-    width: 100%;
-    height: auto;
-    margin-bottom: 0;
-  }
+body.profile .profile-photo-wrapper {
+  display: block;
+}
 
-  body.profile .profile-right-column p {
-    margin: 0;
-    line-height: 1.6;
-  }
+body.profile .profile-photo {
+  max-width: 18.75rem; /* 300px */
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+/* TEXT TO THE RIGHT OF THE IMAGE, RIGHT-ALIGNED */
+body.profile .profile-text {
+  flex: 1;                    /* take remaining horizontal space */
+  display: block;
+  text-align: right;  /* push text fully to the right */
+}
+
+body.profile .profile-text p {
+  text-align: left;  /* align text to the right */
+  margin: 0;
+  line-height: 1.6;
+  padding-right: 1rem; /* optional: right spacing */
+}
+
 
   /* Images */
   .main-photo {
@@ -208,16 +223,17 @@ body:not(.home) {
 }
 
 /* ============================
-   Mobile Styles
+   Mobile Styles (max-width: 768px)
 ============================ */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
+  /* Base adjustments */
   html { font-size: 14px; }
 
   body {
-    padding: 6rem 0 1rem 0 !important;
-    margin: 0 !important;
-    width: 100% !important;
+    padding: 6rem 0 1rem 0;
+    margin: 0;
+    width: 100%;
     overflow-x: hidden;
   }
 
@@ -254,18 +270,17 @@ body:not(.home) {
 
   .sidebar a:hover { text-decoration: underline; }
 
+  /* General paragraph styles */
   p {
     font-size: 1rem;
     line-height: 1.6;
     word-wrap: break-word;
   }
 
-/* ============================
-   Profile Page Mobile
-============================ */
-@media (max-width: 600px) {
+  /* ============================
+     Profile Page Mobile Fix
+  ============================ */
 
-  /* Content stacks vertically */
   body.profile .content {
     display: flex;
     flex-direction: column;
@@ -274,41 +289,36 @@ body:not(.home) {
     margin: 0;
   }
 
-  /* Profile container holds photo + text */
-  .profile-container {
+  body.profile .profile-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 0.75rem;
   }
 
-  /* Photo pushed to right edge */
-  .profile-photo-wrapper {
+  body.profile .profile-photo-wrapper {
     width: 100%;
     display: flex;
-    justify-content: flex-end; /* push child to the right */
+    justify-content: flex-end; /* push photo to right */
   }
 
-  .profile-photo {
+  body.profile .profile-photo {
     max-width: 50%;
     height: auto;
     display: block;
-    margin: 0; /* ensure right flush */
+    margin: 0;
   }
 
-  /* TEXT BELOW PHOTO — RIGHT-ALIGNED WITH RIGHT PADDING */
-  .profile-text p {
+  body.profile .profile-text p {
     width: 100%;
-    text-align: right;     /* align text to the right */
-    padding-right: 1rem;   /* spacing from right edge */
+    text-align: right; /* right-align text */
+    padding-right: 1rem;
     margin: 0;
     line-height: 1.6;
   }
-}
-
 
   /* ============================
-     Work Gallery Mobile
+     Work Gallery Mobile (unchanged)
   ============================ */
   .work-gallery {
     flex-direction: column;
@@ -330,7 +340,7 @@ body:not(.home) {
   }
 
   /* ============================
-     Individual Work Page Mobile
+     Individual Work Page Mobile (unchanged)
   ============================ */
   .main-container {
     display: block;
