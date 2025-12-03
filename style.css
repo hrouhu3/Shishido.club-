@@ -154,7 +154,7 @@ body:not(.home) {
 }
 
 /* Image container (original size) */
-.work-first .work-image-container:first-of-type .work-image {
+.work-first .work-image {
   width: 31.25rem;  /* same as additional images */
   height: auto;     /* preserve aspect ratio */
 }
@@ -188,19 +188,24 @@ body:not(.home) {
 ============================ */
 @media (max-width: 600px) {
 
+  /* Base font size */
   html {
     font-size: 14px;
   }
 
+  /* Body adjustments */
   body {
-    padding: 6rem 0 1rem 0; /* no default side padding */
+    padding: 6rem 0 1rem 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    overflow-x: hidden; /* prevent horizontal scroll / zoom */
   }
 
   body.home {
-    background-attachment: scroll; /* better for mobile performance */
+    background-attachment: scroll; /* better performance on mobile */
   }
 
-  /* Logo smaller on mobile */
+  /* Top logo/title */
   .logo {
     width: 6rem;
   }
@@ -215,24 +220,23 @@ body:not(.home) {
 
   /* Sidebar */
   .sidebar {
-    top: 5.5rem; /* logo top + mobile logo height + spacing */
+    top: 5.5rem;
     width: 10rem;
     gap: 0.5rem;
   }
 
   .sidebar a {
     font-size: 0.9rem;
-    color: inherit; /* allows mobile links to inherit text color */
+    color: inherit;
     text-decoration: none;
-    -webkit-text-size-adjust: 100%; /* prevents font scaling on tap */
+    -webkit-text-size-adjust: 100%;
     transition: all 0.3s ease;
   }
 
-  /* Keep bold on tap but remove blue and scaling */
   .sidebar a:active,
   .sidebar a:focus {
-    font-weight: bold; /* keeps your desired bold effect */
-    color: inherit; /* prevents blue flash */
+    font-weight: bold;
+    color: inherit;
     outline: none;
   }
 
@@ -240,9 +244,11 @@ body:not(.home) {
     text-decoration: underline;
   }
 
+  /* Paragraphs */
   p {
     font-size: 0.95rem;
     line-height: 1.5;
+    word-wrap: break-word; /* prevent overflow of long words */
   }
 
   /* ============================
@@ -287,7 +293,7 @@ body:not(.home) {
 
   .work-gallery a {
     width: 100%;
-    height: auto; /* flexible height */
+    height: auto;
   }
 
   .work-gallery img,
@@ -300,36 +306,76 @@ body:not(.home) {
   /* ============================
      Individual Work Page Mobile
   ============================ */
-  /* Stack first image + text vertically */
+  .main-container {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ============================
+     Work First Section Mobile
+  ============================ */
   .work-first {
-    flex-direction: column;
+    display: flex;
+    flex-direction: column; /* stack image + text */
     gap: 0.5rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
-  .work-first .work-image-container {
-    max-width: 70%;   /* keep original mobile size */
-    margin-left: auto; /* right-align like before */
-    margin-right: 0; /* remove all space on the right */
+  /* First image: aligned left, full width to right edge */
+  .work-first .work-image-container,
+  .work-first .work-image {
+    width: calc(100vw - 10rem); /* full width minus left content padding */
+    max-width: calc(100vw - 10rem);
+    height: auto;
+    display: block;
+    margin-left: 0; /* leave 10rem space on the left */
   }
 
+  /* First text: full width with side padding */
   .work-first .work-text {
-    width: 100%;      /* text takes full width minus padding */
-    padding-left: 1rem;  /* restore left space next to text */
-    padding-right: 1rem; /* optional: keep right padding */
-    justify-content: flex-start; /* text starts at top */
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0 0.75rem; /* small breathing room */
+    margin: 0;
+    box-sizing: border-box;
   }
 
-  /* Additional images stacked full width */
+  .work-first .work-text p {
+    margin: 0 0 1rem 0;
+  }
+
+  /* Additional images: stack full width with padding */
   .work-additional-images {
+    display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin: 0 auto;
-    padding: 0 0.5rem;
+    width: 100%;
+    padding: 0 0.75rem;
+    margin: 0;
+    box-sizing: border-box;
   }
 
   .work-additional-images .work-image {
     width: 100%;
-    height: auto; /* flexible height */
-    max-width: 100%;
+    max-width: 100vw;
+    height: auto;
+    display: block;
   }
+
+  /* Reset main-photo margin (desktop negative margin removed) */
+  .main-photo {
+    margin-top: 0;
+  }
+
 }
