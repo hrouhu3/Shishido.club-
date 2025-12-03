@@ -149,21 +149,22 @@ body:not(.home) {
 .work-first {
   display: flex;            /* side-by-side */
   gap: 1.25rem;             /* space between image and text */
-  align-items: flex-start;  /* default: top alignment */
-  margin-bottom: 2rem;      /* space below this section */
+  align-items: flex-end;  /* bottom-align text with image */
+  margin-bottom: 1.25rem;
 }
 
 /* Image container (original size) */
-.work-first .work-image-container {
-  width: 31.25rem; /* same width as additional images */
-  height: auto;    /* keep aspect ratio */
+.work-first .work-image-container:first-of-type .work-image {
+  width: 31.25rem;  /* same as additional images */
+  height: auto;     /* preserve aspect ratio */
 }
 
-/* Text container */
+/* Text container  */
 .work-first .work-text {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* aligns text bottom to image bottom */
+  justify-content: flex-end; /* text bottom aligns with image bottom */
+  max-width: calc(100% - 31.25rem - 1.25rem); /* make sure text doesn’t overflow */
 }
 
 /* Additional images container */
