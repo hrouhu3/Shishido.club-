@@ -373,7 +373,7 @@ body.profile .profile-text p {
   .work-first .work-image {
     width: calc(100% - 10rem); /* leave 10rem on left */
     max-width: calc(100% - 10rem);
-    min-width: 20rem;
+    min-width: calc(100vw - 10rem);
     height: auto;
     display: block;
     margin-left: auto;  /* push to right edge */
