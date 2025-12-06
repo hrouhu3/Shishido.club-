@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>...</title>                                                          <!-- change -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top title / logo -->
+  <h1 class="top-title">
+    <a href="index.html">
+      <img src="images/webp/logo.webp" alt="Shishido logo" class="logo">
+    </a>
+  </h1>
+
+  <div class="main-container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <a href="past-works.html">Work</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+
+    <!-- Work content -->
+    <main class="content">
+
+      <!-- ============================
+           Work — First image & description
+      ============================ -->
+      <div class="work-first">
+        <div class="work-image-container"> 
+          <img class="work-image" loading="lazy"
+            src="images/webp/work9.webp" alt="Work 9">                                  <!-- change -->
+        </div>
+    
+        <div class="work-text">
+          <p>
+            <span lang="en">...</span><br>                                <!-- change -->
+            <span lang="ja">/...</span>                                    <!-- change -->
+          </p>
+    
+          <p>                                                                           <!-- change -->
+            <span lang="en">...<br>
+            Size: ...<br>
+            Materials: ...</span>
+          </p>
+    
+          <p>                                                                           <!-- change -->
+            <span lang="ja">...<br>
+            サイズ：...<br>
+            素材：...</span>
+          </p>
+        </div>
+      </div>
+    
+      <!-- ============================
+           Work — Additional images
+      ============================ -->
+      <div class="work-additional-images">                                              <!-- change -->
+        <img src="images/webp/work9_2.webp" alt="Work 9 - 2" class="work-image" loading="lazy">
+        <img src="images/webp/work9_3.webp" alt="Work 9 - 3" class="work-image" loading="lazy">
+        <img src="images/webp/work9_4.webp" alt="Work 9 - 4" class="work-image" loading="lazy">
+        <img src="images/webp/work9_5.webp" alt="Work 9 - 5" class="work-image" loading="lazy">
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('page-loaded');
+    });
+  </script>
+</body>
+</html>
