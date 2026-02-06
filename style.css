@@ -235,6 +235,35 @@ body.profile .profile-text p {
     display: block;
   }
 
+  .bubble-wrapper {
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    width: 100px;      
+    margin-top: 8rem;   
+  }
+  
+  .bubble-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* text on top of the bubble */
+  .bubble-text {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    color: inherit;
+    text-decoration: none;
+    -webkit-text-size-adjust: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  .bubble-text:hover { text-decoration: underline; }
+
 }
 
 /* ============================
@@ -291,6 +320,33 @@ body.profile .profile-text p {
     line-height: 1.6;
     word-wrap: break-word;
   }
+
+  .bubble-wrapper {
+    position: absolute;
+    top: 28%;
+    left: 60%;
+    width: 100px;
+  }
+
+  .bubble-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .bubble-text {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    color: inherit;
+    text-decoration: none;
+    -webkit-text-size-adjust: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .bubble-text:hover { text-decoration: underline; }
 
   /* ============================
      Profile Page Mobile Fix
@@ -433,4 +489,6 @@ body.profile .profile-text p {
   }
 
   .main-photo { margin-top: 0; }
+
+  
 }
