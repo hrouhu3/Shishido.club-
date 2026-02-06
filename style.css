@@ -419,6 +419,7 @@ body.profile .profile-text p {
     max-width: 100%;       /* full width on small screens */
     margin: 120px auto 0;  /* top spacing + horizontal padding */
     padding: 0 1 rem;            /* remove extra padding */
+    box-sizing: border-box; 
     line-height: 1.6;      /* keep spacing consistent */
   }
 
