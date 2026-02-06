@@ -417,7 +417,8 @@ body.profile .profile-text p {
 
   body.howtoorder .content {
     max-width: 700px;             /* same max-width as contact page */
-    margin: 150px 10px 0 10px;    /* top spacing + horizontal spacing (matches contact page) */
+    margin: 150px auto 0;    /* top spacing + horizontal spacing (matches contact page) */
+    padding: 0 10px;              /* extra horizontal padding, ensures text doesn’t touch edges */
     box-sizing: border-box;       /* include padding in width calculation */
     line-height: 1.6;             /* consistent spacing */
   }
