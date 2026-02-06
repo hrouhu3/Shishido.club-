@@ -138,9 +138,9 @@ body:not(.home) {
 /* How To Order Page */
 body.howtoorder .content {
   max-width: 700px;        /* limit width */
-  margin: 150px auto 0;    /* 150px space from top, center horizontally */
-  padding: 0 1rem;         /* optional horizontal padding for mobile */
-  line-height: 1.6;        /* consistent with other pages */
+  margin: 150px auto 0 auto;    /* 150px space from top, center horizontally */
+  padding: 10px;         /* optional horizontal padding for mobile */
+  line-height: 1.7;        /* consistent with other pages */
 }
 
 /* Profile Page — Desktop */
@@ -416,18 +416,17 @@ body.profile .profile-text p {
 ============================ */
 
   body.howtoorder .content {
-    max-width: 100%;       /* full width on small screens */
-    margin: 120px auto 0;  /* top spacing + horizontal padding */
-    padding: 0 1 rem;            /* remove extra padding */
-    box-sizing: border-box; 
-    line-height: 1.6;      /* keep spacing consistent */
+    max-width: 700px;             /* same max-width as contact page */
+    margin: 150px 10px 0 10px;    /* top spacing + horizontal spacing (matches contact page) */
+    padding: 0 10px;              /* extra horizontal padding, ensures text doesn’t touch edges */
+    box-sizing: border-box;       /* include padding in width calculation */
+    line-height: 1.6;             /* consistent spacing */
   }
 
-  /* Optional: make paragraphs a bit easier to read on mobile */
   body.howtoorder .content p {
-    font-size: 1rem;       /* same as desktop for consistency */
-    margin-bottom: 1rem;   /* spacing between paragraphs */
-    word-wrap: break-word; /* prevent overflow */
+    font-size: 1rem;               /* same as other mobile pages */
+    margin-bottom: 1rem;           /* spacing between paragraphs */
+    word-wrap: break-word;         /* prevent text overflow */
   }
 
   /* ============================
