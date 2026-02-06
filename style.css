@@ -398,6 +398,8 @@ body.profile .profile-text p {
     background-color: #421b1b;
     color: white;
     border: 1px solid #421b1b;
+    font-size: 1rem;
+    font-family: inherit;
   }
   
   .contact-container button {
