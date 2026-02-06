@@ -386,6 +386,7 @@ body.profile .profile-text p {
 
   .contact-container {
     margin: 150px 10px 0 auto; /* top right bottom left */
+    padding-left: 10px;
     max-width: 500px;
   }
   
