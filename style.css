@@ -387,7 +387,7 @@ body.profile .profile-text p {
   .bubble-text:hover { text-decoration: underline; }
 
   .contact-container {
-    margin: 150px auto 0 auto; /* top right bottom left */
+    margin: 150px 10px 0 10px; /* top right bottom left */
     max-width: 500px;
   }
   
@@ -417,8 +417,8 @@ body.profile .profile-text p {
 
   body.howtoorder .content {
     max-width: 100%;       /* full width on small screens */
-    margin: 120px 1rem 0;  /* top spacing + horizontal padding */
-    padding: 0;            /* remove extra padding */
+    margin: 120px auto 0;  /* top spacing + horizontal padding */
+    padding: 0 1 rem;            /* remove extra padding */
     line-height: 1.6;      /* keep spacing consistent */
   }
 
