@@ -342,7 +342,7 @@ body.profile .profile-text p {
 
   .sidebar a:active,
   .sidebar a:focus {
-    font-weight: bold;
+    font-weight: normal;
     color: inherit;
     outline: none;
   }
@@ -356,8 +356,6 @@ body.profile .profile-text p {
     word-wrap: break-word;
   }
 
-  .contact-container {
-    margin-top: 120px; /* more top spacing on mobile */ }
 
   .bubble-wrapper {
     position: absolute;
